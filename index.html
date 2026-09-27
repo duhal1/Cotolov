@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котолов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <header >
+        <div>
+            <h3 >Котолов</h3> 
+            <button id="newCard" class="orIn" onclick="openForm()">подать заявление</button>
+        </div>
+    </header>
+
+        <main>
+            <div id="choose">
+                <div class="filters">
+                    <p>фильтры:</p>
+                    <button  id="all" class="filt orIn"  onclick="filterStatus('all')">Все</button>
+                    <button id="lost" class="filt mlIn" onclick="filterStatus('lost')">🔴Потерялись</button>
+                    <button id="found" class="filt mlIn" onclick="filterStatus('found')">🟢Найдены</button>
+                    <select name="type" id="typeSelect" class="mlIn" onchange="renderCards()">
+                        <option value="">все</option>
+                        <option value="cat">Кошка</option>
+                        <option value="dog">Собака</option>
+                        <option value="other">другое</option>
+                    </select>
+                </div>
+                <div id="searchPar">
+                    <input type="search" id="search" placeholder="поиск по району или породе" oninput="renderCards()">
+                </div>
+            </div>
+                <div id="general">
+                    <div id="map"></div>
+                    <div id ="cardList"></div>
+                </div>
+
+            </div>
+
+            <div id="addForm">
+                <p>статус обьявления</p>
+                <select name="status" id="newSelect">
+                    <option value="lost">🔴Потерялся(ищу питомца)</option>
+                    <option value="found">🟢Найден(ищу хозяина)</option>
+                </select>
+                <p>Тип животного</p>
+                    <select name="type" id="newType" onchange="renderCards()">
+                        <option value="cat">Кошка</option>
+                        <option value="dog">Собака</option>
+                        <option value="other">другое</option>
+                    </select>
+                <p>Порода животного</p>
+                    <input id="newTitle"  type="text" placeholder="Мейн Кун">
+                <p>описание и приметы</p>
+                    <input type="text" id="newDesc" placeholder="Серого цвета, откликается на кличку...">
+                <p>Район пропажи / находки</p>
+                    <input id="newDist" type="text" placeholder="Ул. Им космонавта Поповича 45">
+                <p>Контактный номер</p>
+                    <input id="newContact" type="text" placeholder="+79246658746">
+                <p>координаты</p>
+                    <input id="coords" type="text" placeholder="46.949824, 142.753456">     
+                <div id="formBtn">             
+                    <button onclick="closeCard()">отмена</button>
+                    <button class="orIn" onclick="addPet()">отправить заявку</button>
+                </div>
+
+            </div>
+        </main>
+    <script src="pets.js" ></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>

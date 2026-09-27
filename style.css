@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;500;600;700&display=swap);
+
+body {
+    background-color: #f5e6d3;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    background-color: #fdf6ee;
+}
+
+header > div {
+    max-height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+main:first-child {
+    display: flex;
+}
+
+h3 {
+    margin-left: 4% ;
+}
+
+button {
+    border: 0;
+    border-radius: 20px;
+}
+
+select {
+    border: none;
+    border-radius: 12px;
+}
+
+.orIn {
+    background-color:#d4600a; 
+    color: #fdf6ee;
+}
+
+.mlIn {
+    background-color: #fdf6ee;
+}
+
+#choose {
+    display: flex;
+    align-items: center;
+
+}
+
+#newCard {
+    position: absolute;
+    right: 30px;
+    height: 30px;
+}
+
+#searchPar {
+    position: absolute;
+    align-self: center;
+    right: 20px;
+}
+
+#search {
+    width: 30vw;
+    border: none;
+    margin: 0;
+    padding: 7px 25px;
+    font-size: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23888' d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    width: 40vw;
+    align-items: center;
+
+}
+
+.filters > button {
+    white-space: nowrap;
+    
+}
+
+#map {
+    width: 50vw;
+    height: 70vh;
+    border-radius: 15px;
+}
+
+#general {
+    display: flex;
+    gap: 5px;
+}
+
+#general > div {
+    z-index: 0;
+}
+
+#cardList {
+    min-width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:active {
+  transform: translateY(-2px);
+}
+
+.card {
+    align-self: center;
+    margin: 5px;
+    width: 90%;
+    max-height: 30vh;
+    border: 2px solid #e0ccb4;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.card h3 {
+    align-self: center;
+}
+
+.card * {
+    margin: 0 10px;
+}
+
+button:not(.filter):active {
+    transform: translateY(-2px);
+}
+
+#addForm {
+    z-index: 1;
+    width: 50vw;
+    position: absolute;
+    top: 10vh;
+    justify-self: center;
+    justify-content: center;
+    display: none;
+    flex-direction: column;
+    background-color:  #fff9f2;
+    border: 1px solid #e0ccb4;
+    border-radius: 15px;
+}
+
+#addForm > p {
+    align-self: center;
+}
+
+#formBtn {
+    margin: 10px;
+    align-self: flex-end;
+}
+
+@media (max-width:1080px) {
+    .filters {
+        display: block;
+    }
+    #search{
+        width: 50vw;
+    }
+    #map {
+        align-self: center;
+        width: 90vw;
+        height: 40vh;
+    }
+    #general {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .card {
+        max-height: 20vh;
+    }
+    #addForm {
+        width: 80vw;
+    }
+}
