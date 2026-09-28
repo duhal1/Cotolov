@@ -78,10 +78,12 @@ function addPet() {
         description: document.getElementById('newDesc').value,
         district: document.getElementById('newDist').value,
         contact: document.getElementById('newContact').value,
-        coords:  document.getElementById('coords').value.split(',')
+        coords:  (document.getElementById('coords').value.split(',') == '') ? [46.950695, 142.739074] : document.getElementById('coords').value.split(',')
     }
 
-    pets.unshift(newPet);
+    alert(document.getElementById('coords').value.split(',')) 
+
+     pets.unshift(newPet);
     localStorage.setItem('hvost_pets_data', JSON.stringify(pets));
     renderCards();
 
