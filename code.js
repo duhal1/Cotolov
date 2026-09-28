@@ -81,8 +81,6 @@ function addPet() {
         coords:  (document.getElementById('coords').value.split(',') == '') ? [46.950695, 142.739074] : document.getElementById('coords').value.split(',')
     }
 
-    alert(document.getElementById('coords').value.split(',')) 
-
      pets.unshift(newPet);
     localStorage.setItem('hvost_pets_data', JSON.stringify(pets));
     renderCards();
